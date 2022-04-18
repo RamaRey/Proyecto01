@@ -1,0 +1,341 @@
+
+*{
+    box-sizing: border-box; /**/
+}
+
+html{
+    scroll-behavior: smooth; /*Para que el salto de pagina no sea brusco*/
+}
+
+body {
+    font-family:'franklin gothic medium', book regular;
+    margin: 0;
+}
+
+h1{ font-size: 3.5em;}
+h2{font-size: 2.7em}
+h3{font-size: 2em;}
+p{font-size: 1.25em;}
+ul{list-style: none;}
+li{font-size: 1.25em;}
+
+button{
+    font-size: 1.5em; 
+    font-weight: bold;
+    padding: 10px 15px; /* tamaño boton */
+    border-radius: 10px; /*radio borde boton */
+    border: 1px solid rgba(0, 0, 0, 0.5); /* borde de boton, grueso, solido, color en rgba*/
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* sombra de boton, x , y, expansin sombra, color*/
+    color: white;
+    background-color:blueviolet;
+}
+
+button:hover {
+    background-color:rgb(57, 11, 100); /* color cuando paso por arriba del boton */
+}
+
+.container { 
+    max-width: 1400px; /* hace los container responsive */
+    margin: auto;
+}
+
+.color-acento{color: blueviolet;}
+
+header{
+    background-color:rgb(243, 243, 243);
+}
+
+header .logo{ /* selecciono logo en header */
+    margin: 0;
+    padding: 25px 30px; /* arriba, costado */
+    font-weight: bold;
+    color:blueviolet;
+    font-size: 1.6em;
+}
+
+header .container{ /* centra el container para que trabaje bien en responsive */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 25px;
+}
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none; /* saca subrayado */
+    font-weight: bold;
+    color: black;
+}
+
+header a:hover{ /* cuando pasa por arriba del header */
+    color:blueviolet;
+}
+
+#hero{ /* seleccion hero*/
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh; /* en porcentaje de pantalla*/
+    background-image:linear-gradient( /* se pone delante de la imagen para que genere una capa que no se fucione mejor con la tipografia*/
+        0deg,
+        rgba(0, 0, 0,0.5),
+        rgba(0, 0, 0,0.5)
+    )   /* repite color negro gradiente para mejor efecto*/
+    ,url("media/01.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
+    background-color: black;
+}
+
+#hero h1{
+    color:white;
+}
+
+#hero button{
+    font-size: 1.6em;
+}
+
+#somos-mec .container{
+    text-align: center;
+    padding: 60px 50px;
+}
+
+#nuestros-servicios{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+#nuestro-servicios .container{
+    padding: 150px 12px;
+
+}
+
+#nuestros-servicios h2{
+    margin-top: 0;
+    font-size: 3.2em;
+    color: #48ad72;
+}
+
+#nuestros-servicios h3{
+    margin-top: 0;
+}
+
+#nuestros-servicios p{
+    display: none;
+}
+
+#nuestros-servicios .carta{
+   background-position: center center;
+   background-size: cover;
+   padding: 50px 0px;
+   margin: 30px;
+   border-radius: 15px;
+}
+
+.carta:first-child{ /*selecciona los productos por herencia, al estar uno debajo del otro en un container*/
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("media/rig.png");
+
+}
+
+.carta:nth-child(2){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("media/housing.png");
+}
+
+.carta:nth-child(3){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("media/farm.png");
+
+}
+
+#beneficios .container{
+    text-align: center;
+    padding: 70px 12px;
+}
+
+#beneficios li{
+    margin: 16px 0px;
+    font-weight: bold;
+}
+
+#empezaya {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 80vh; /* en porcentaje de pantalla*/
+    background-image:linear-gradient( /* se pone delante de la imagen para que genere una capa que no se fucione mejor con la tipografia*/
+        0deg,
+        rgba(0, 0, 0,0.5),
+        rgba(0, 0, 0,0.5)
+    )   /* repite color negro gradiente para mejor efecto*/
+    ,url("media/03.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
+    background-color: black;
+}
+#empezaya h2{ 
+    font-size: 6vw;
+}
+
+#empezaya button{
+    font-size: 3vw;
+}
+
+footer {
+    background-color: white;
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100, 100, 100);
+    text-align:center;
+}
+
+footer.container{
+    height:150px;
+    display:flex;
+    justify-content:center;
+    align-items: flex-end;
+}
+
+@media (min-width: 720px){ /* Con esto se estilisa la pagina en un tamaño mayor a 720px) */
+    
+    header { /* Fija el header para navegar y verlo*/
+        position: fixed;
+        width: 100%;
+    }
+    
+    header .container{ /* Los selectores son iguales*/
+        flex-direction: row;
+        justify-content:space-between;
+    }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 30px;
+    }
+
+    #hero h1{
+        font-size: 4em;
+    }
+
+    #somos-mec .container{
+        display: flex;
+        justify-content:space-evenly;
+    }
+
+    #somos-mec .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #somos-mec h2{
+        margin-top: 0px;
+    }
+    #somos-mec .img-container{
+        background-image:url("media/02.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 450px;
+        width: 450px;
+    }
+
+    #nuestros-servicios .servicios{
+        display: flex;
+        justify-content:center;
+    }
+
+    #nuestros-servicios p{
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #nuestros-servicios h2{
+        font-size: 4em;
+    }
+
+    #nuestros-servicios h3{
+        margin-top: 0;
+    }
+
+    #nuestros-servicios .carta{
+        padding: 50px;
+        background-size: 100% 150px;
+        background-repeat: no-repeat;
+        background-color: rgb(0, 0, 0);
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .carta:first-child{
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("media/rig.png");
+
+    }
+
+    .carta:nth-child(2){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("media/housing.png");
+    }
+
+    .carta:nth-child(3){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("farm.png");
+    }
+
+    #beneficios .container{
+        text-align: center;
+
+    }
+
+    #empezaya h2{
+        font-size: 3.5em;
+    }
+
+
+}
